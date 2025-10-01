@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARB Planning & Capacity Building Grant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals with Teal Accent -->
+    <!-- Application Structure Plan: A single-page, multi-section layout with a sticky navigation bar for easy scrolling between key topics: an overview with vital stats, an interactive eligibility checker, a breakdown of fundable activities, and a timeline with next steps. This structure was chosen to guide potential applicants through a logical discovery process, from high-level awareness to specific requirements and actions, making the complex information more digestible and user-centric than a linear document. -->
+    <!-- Visualization & Content Choices: Key numbers (total funding, max award) are presented as high-impact "stat cards." An interactive dropdown for "Partnership Requirements" allows users to select their organization type and see their specific obligations, which is more engaging and clear than a static table. A visual, color-coded timeline guides users through the application process. These choices aim to clarify the most critical decision-points for applicants (eligibility and deadlines) without using complex charts, as the source material is qualitative. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f7f4;
+            color: #3f3f46;
+        }
+        .stat-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e5e4;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+        }
+        .nav-link {
+            transition: color 0.2s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #14b8a6;
+        }
+        .accent-bg {
+            background-color: #f0fdfa;
+        }
+        .accent-border {
+            border-color: #5eead4;
+        }
+        .accent-text {
+            color: #0f766e;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: -21px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #a1a1aa;
+            border: 2px solid #f8f7f4;
+        }
+        .timeline-item.active::before {
+            background-color: #14b8a6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-stone-200">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-stone-700">CARB PCB Grant</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#overview" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-stone-600">Overview</a>
+                        <a href="#eligibility" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-stone-600">Eligibility</a>
+                        <a href="#funding" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-stone-600">What it Funds</a>
+                        <a href="#timeline" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-stone-600">Timeline</a>
+                        <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-stone-600">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-sm font-semibold uppercase tracking-wider text-teal-600">For Clean Transportation Readiness</span>
+                <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-stone-800">Planning & Capacity Building Grant</h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-stone-500">
+                    A new CARB grant to fund early-stage planning, community engagement, and partnership development, helping communities compete for large-scale clean transportation grants in the future.
+                </p>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="stat-card p-8 rounded-xl">
+                        <p class="text-5xl font-bold text-teal-600">$7.3M</p>
+                        <p class="mt-3 text-lg font-medium text-stone-600">Total Funding Available</p>
+                    </div>
+                    <div class="stat-card p-8 rounded-xl">
+                        <p class="text-5xl font-bold text-teal-600">$500K</p>
+                        <p class="mt-3 text-lg font-medium text-stone-600">Max Award Per Project</p>
+                    </div>
+                    <div class="stat-card p-8 rounded-xl">
+                        <p class="text-5xl font-bold text-teal-600">15</p>
+                        <p class="mt-3 text-lg font-medium text-stone-600">Anticipated Grant Awards</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="eligibility" class="py-16 md:py-24 accent-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-stone-800 sm:text-4xl">Are You Eligible?</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-stone-600">This grant requires a robust partnership structure and a focus on California's Priority Populations. Use our interactive tool to see what's required for you.</p>
+                </div>
+
+                <div class="mt-12 max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div class="bg-white p-8 rounded-xl border border-stone-200 h-full">
+                        <h3 class="text-xl font-semibold text-stone-800">1. Location Requirement</h3>
+                        <p class="mt-2 text-stone-600">At least 50% of your proposed project area must be within a priority population zone as defined by CARB.</p>
+                        <a href="https://webmaps.arb.ca.gov/PriorityPopulations/" target="_blank" class="mt-4 inline-block bg-teal-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-teal-700 transition-colors">
+                            Check the Priority Map <span>&rarr;</span>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl border border-stone-200 h-full">
+                        <h3 class="text-xl font-semibold text-stone-800">2. Interactive Partnership Guide</h3>
+                        <p class="mt-2 text-stone-600">Select your organization type to see the specific partnership structure you must build for your application.</p>
+                        <div class="mt-4">
+                            <label for="org-type" class="block text-sm font-medium text-stone-700">If you are a...</label>
+                            <select id="org-type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-stone-300 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md">
+                                <option value="default" selected>Select your organization type</option>
+                                <option value="Local Government">City / Local Government</option>
+                                <option value="CBO">Community-Based Organization (CBO)</option>
+                                <option value="Tribal Government">Tribal Government</option>
+                                <option value="Public School">Public School</option>
+                            </select>
+                        </div>
+                        <div id="partnership-results" class="mt-4 p-4 bg-teal-50 rounded-lg border-l-4 border-teal-500 text-teal-800 min-h-[100px]">
+                            <p>Your requirements will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="funding" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-stone-800 sm:text-4xl">What the Grant Funds</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-stone-600">This is a readiness grant focused on building a strong foundation for future clean transportation projects.</p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl border border-stone-200">
+                        <h3 class="text-lg font-semibold text-stone-800">Planning & Assessment</h3>
+                        <p class="mt-2 text-stone-600">Conduct needs assessments, feasibility studies, and develop master plans that integrate clean mobility with housing, land use, and public health.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-stone-200">
+                        <h3 class="text-lg font-semibold text-stone-800">Community Engagement</h3>
+                        <p class="mt-2 text-stone-600">Fund crucial outreach, education, and organizing efforts to build community support and gather input on clean transportation options.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-stone-200">
+                        <h3 class="text-lg font-semibold text-stone-800">Capacity Building</h3>
+                        <p class="mt-2 text-stone-600">Develop early-stage collaborations, establish strong partnerships, and create workforce training programs for clean transportation careers.</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 max-w-4xl mx-auto p-6 rounded-xl accent-bg border-l-4 accent-border">
+                    <h3 class="font-bold accent-text">A Crucial Note on Operational Costs</h3>
+                    <p class="mt-2 accent-text">
+                        While the grant's primary focus is planning, there has been **optimism from grant administrators that operational costs** (like driver labor or short-term pilot service expenses) **could be eligible**. We encourage applicants to clearly articulate how any short-term operational funding is essential to the planning and readiness objective (e.g., funding a temporary service pilot to inform a future long-term plan).
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="timeline" class="py-16 md:py-24 accent-bg">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-stone-800 sm:text-4xl">Timeline & Next Steps</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-stone-600">Follow the grant lifecycle and find out what you should be doing now.</p>
+                </div>
+                <div class="mt-12">
+                    <div class="relative pl-6 border-l-2 border-stone-300">
+                        <div class="timeline-item mb-8">
+                            <h4 class="font-semibold text-stone-800">August 2025: Draft & Comment Period</h4>
+                            <p class="text-sm text-stone-500">CARB released draft requirements for public and Tribal comment. This period has now closed.</p>
+                        </div>
+                        <div id="timeline-sept" class="timeline-item mb-8">
+                            <h4 class="font-semibold text-stone-800">September - November 2025: Application Window</h4>
+                            <p class="text-sm text-stone-500">The RFA is released and the 8-week application window is open. Technical assistance is available.</p>
+                        </div>
+                        <div class="timeline-item mb-8">
+                            <h4 class="font-semibold text-stone-800">December 2025: Grantees Selected</h4>
+                            <p class="text-sm text-stone-500">CARB reviews applications and announces the awardees.</p>
+                        </div>
+                        <div class="timeline-item mb-8">
+                            <h4 class="font-semibold text-stone-800">Jan 2026 - Dec 2027: Project Period</h4>
+                            <p class="text-sm text-stone-500">Awardees work on and complete their planning and capacity-building projects.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-12 p-8 bg-white rounded-xl border border-stone-200">
+                    <h3 class="text-xl font-semibold text-stone-800">Your Next Steps</h3>
+                    <ol class="mt-4 list-decimal list-inside space-y-3 text-stone-600">
+                        <li><strong>Apply Now:</strong> The application window is currently open! Gather your partners and prepare your proposal.</li>
+                        <li><strong>Get Technical Assistance:</strong> CARB and its partners offer application support, including workshops, Q&As, and office hours.</li>
+                        <li><strong>Stay Connected:</strong> Sign up for updates and find more resources by visiting <a href="https://tinyurl.com/PCBRFA24-25" target="_blank" class="text-teal-600 hover:underline">tinyurl.com/PCBRFA24-25</a>.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact" class="bg-stone-800 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold">Have Questions?</h2>
+            <p class="mt-2 text-stone-300">For more information on the Planning & Capacity Building grant, please contact the PCB Administrator team.</p>
+            <a href="mailto:pcbadmin@buildmomentum.io" class="mt-4 inline-block bg-teal-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-teal-700 transition-colors">
+                pcbadmin@buildmomentum.io
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const orgTypeSelect = document.getElementById('org-type');
+            const partnershipResultsDiv = document.getElementById('partnership-results');
+
+            const partnershipData = {
+                "Local Government": {
+                    lead: "As the <strong>Lead Applicant</strong>, you must partner with:",
+                    sub: "✓ At least one <strong>Community-Based Organization (CBO)</strong> as a Sub-Applicant.",
+                    community: "✓ At least one <strong>Community Partner</strong> to help guide the project."
+                },
+                "CBO": {
+                    lead: "As the <strong>Lead Applicant</strong>, you must partner with:",
+                    sub: "✓ At least one <strong>Local or Tribal Government</strong> as a Sub-Applicant.",
+                    community: "✓ At least one <strong>Community Partner</strong> to help guide the project."
+                },
+                "Tribal Government": {
+                    lead: "As the <strong>Lead Applicant</strong>, you must partner with:",
+                    sub: "✓ No Sub-Applicant is required, but you are encouraged to partner.",
+                    community: "✓ At least one <strong>Community Partner</strong> to help guide the project."
+                },
+                "Public School": {
+                    lead: "As the <strong>Lead Applicant</strong>, you must partner with:",
+                    sub: "✓ At least one <strong>Community-Based Organization (CBO)</strong> as a Sub-Applicant.",
+                    community: "✓ At least one <strong>Community Partner</strong> to help guide the project."
+                },
+                "default": {
+                    lead: "Your requirements will appear here.",
+                    sub: "",
+                    community: ""
+                }
+            };
+
+            orgTypeSelect.addEventListener('change', function() {
+                const selectedType = this.value;
+                const data = partnershipData[selectedType];
+                
+                let content = `<p class="font-semibold">${data.lead}</p>`;
+                if (data.sub) {
+                    content += `<p class="mt-2">${data.sub}</p>`;
+                }
+                 if (data.community) {
+                    content += `<p class="mt-1">${data.community}</p>`;
+                }
+                
+                partnershipResultsDiv.innerHTML = content;
+            });
+
+            function highlightCurrentTimelineStep() {
+                const now = new Date();
+                const currentMonth = now.getMonth();
+                const currentYear = now.getFullYear();
+                const timelineStepSept = document.getElementById('timeline-sept');
+
+                if (currentYear === 2025 && currentMonth >= 8 && currentMonth <= 10) { 
+                    timelineStepSept.classList.add('active');
+                }
+            }
+
+            highlightCurrentTimelineStep();
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.5 }); 
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
